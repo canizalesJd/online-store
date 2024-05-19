@@ -1,8 +1,8 @@
-import logo from './assets/logo.svg';
+import Header from './components/Header';
 export default function App() {
   return (
     <>
-      <img src={logo} alt="" />
+      <Header />
     </>
   );
 }
