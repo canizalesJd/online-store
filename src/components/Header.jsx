@@ -10,6 +10,8 @@ import {
   Button,
 } from '@nextui-org/react';
 import logo from '../assets/logo.svg';
+import { UserIcon } from './icons/UserIcon';
+import { HeartIcon } from './icons/HeartIcon';
 
 export default function Header() {
   const menuItems = ['Home', 'Shop', 'About', 'Contact'];
@@ -25,11 +27,10 @@ export default function Header() {
           <img src={logo} alt="Logo Ipsum" className="h-7" />
         </NavbarBrand>
       </NavbarContent>
-
+      <NavbarBrand className="hidden sm:flex" justify="center">
+        <img src={logo} alt="Logo Ipsum" className="drag-none h-7" />
+      </NavbarBrand>
       <NavbarContent className="hidden sm:flex gap-5" justify="center">
-        <NavbarBrand>
-          <img src={logo} alt="Logo Ipsum" className="h-7" />
-        </NavbarBrand>
         <NavbarItem>
           <Link color="foreground" href="#">
             Home
@@ -53,12 +54,14 @@ export default function Header() {
       </NavbarContent>
 
       <NavbarContent justify="end">
-        <NavbarItem className="hidden lg:flex">
-          <Link href="#">Login</Link>
+        <NavbarItem>
+          <Button isIconOnly color="light" variant="transparent" aria-label="Take a photo">
+            <HeartIcon className="text-2xl text-foreground" />
+          </Button>
         </NavbarItem>
         <NavbarItem>
-          <Button as={Link} color="primary" href="#">
-            Sign Up
+          <Button isIconOnly color="light" variant="transparent" aria-label="Take a photo">
+            <UserIcon className="text-2xl text-foreground" />
           </Button>
         </NavbarItem>
       </NavbarContent>
